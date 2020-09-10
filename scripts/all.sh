@@ -1,19 +1,19 @@
 #!/bin/bash
 
-
+LOCATION=$1
 
 # Skrypt robi backup strony
 echo "Creating backup..."
-./backups.sh
+sh $LOCATION/backups.sh
 
 # Skrypt instaluje wp cli ( najnowsza wersje ), a jeśli jest zainstalowana to instaluje nam konkretną którą podamy jako argument
 echo "WP check..."
-./wp_check.sh
+sh $LOCATION/wp_check.sh
 
 # Skrypt instaluje wordpressa
 echo "Intalling wordpres..."
-./installing_wordpress.sh
+sh $LOCATION/installing_wordpress.sh
 
 # Instalowanie pluginów
 echo "Installing plugins"
-./plugins.sh
+sh $LOCATION/plugins.sh

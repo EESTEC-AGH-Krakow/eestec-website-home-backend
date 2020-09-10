@@ -9,13 +9,13 @@ if ! command -v wp &> /dev/null # jeśli nie mamy zainstalowanego wp cli to pobi
 then
 	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 	chmod +x wp-cli.phar
-	mv wp-cli.phar /home/eestec/bin/wp
+	mv wp-cli.phar /home/eestec/bin/wp-cli.phar
 else
 	if [ "$version_of_wp_cli" = "" ]
 	then
 		echo "Podaj wersję WP CLI do której chcesz zrobić update jako argument"
 	else
-		wp core update --version=$version_of_wp_cli --force # podajemy argumenty
+		wp-cli.phar core update --version=$version_of_wp_cli --force # podajemy argumenty
 	fi
 fi
 

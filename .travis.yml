@@ -1,4 +1,4 @@
-language: php
+language: minimal
 os: linux
 dist: xenial
 before_deploy: ./iac/before_deploy.sh
@@ -7,7 +7,7 @@ deploy:
     skip_cleanup: true
     script: bash ./iac/deploy.sh $DEV_LOCATION
     on:
-      branch: feature/setup-travis.ci-basic-integration
+      branch: develop
   - provider: script
     skip_cleanup: true
     script: bash ./iac/deploy.sh $PRD_LOCATION
