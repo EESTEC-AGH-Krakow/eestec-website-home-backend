@@ -1,0 +1,15 @@
+language: minimal
+os: linux
+dist: xenial
+before_deploy: ./iac/before_deploy.sh
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash ./iac/deploy.sh $DEV_LOCATION
+    on:
+      branch: develop
+  - provider: script
+    skip_cleanup: true
+    script: bash ./iac/deploy.sh $PRD_LOCATION
+    on:
+      branch: master
